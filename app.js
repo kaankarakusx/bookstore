@@ -3,12 +3,12 @@ require("./db/db")();
 const express = require("express");
 const app = express();
 
+//Routes
+const bookRouter = require("./routes/book");
 
-app.get("/",function(req,res){
-    res.send("Hello world");
-})
+app.use(express.json());
 
-
+app.use(bookRouter);
 
 const PORT = process.env.PORT || 3000;
 
