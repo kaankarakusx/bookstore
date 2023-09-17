@@ -6,9 +6,14 @@ const app = express();
 //Routes
 const bookRouter = require("./routes/book");
 
-app.use(express.json());
+//cors
+const cors = require("cors");
 
+app.use(cors());
+app.use(express.json());
 app.use(bookRouter);
+
+
 
 const PORT = process.env.PORT || 3000;
 
